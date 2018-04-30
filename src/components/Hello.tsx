@@ -8,7 +8,7 @@ export interface HelloProps { compiler: string; framework: string; }
 export class Hello extends React.Component<HelloProps, {}> {
     componentDidMount() {
         FetchAPI('/api/users/test')
-        .then(response => response.json())
+        // .then(response => response.json())
         .then(data => { console.log('data', data) })
         .catch(err => console.log('err', err))
     }

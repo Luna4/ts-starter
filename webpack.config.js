@@ -69,7 +69,7 @@ module.exports = {
 
   devServer: {
     overlay: true,
-    port: 8081,
+    port: 8082,
     stats: {
       color: true
     },
