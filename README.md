@@ -44,7 +44,7 @@ npm start
 
 
 ### TODO
-router
-unit test (jest | enzym)
-seperate webapck dev and prod
-api mock
+- router
+- unit test (jest | enzym)
+- seperate webapck dev and prod
+- api mock
