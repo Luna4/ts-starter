@@ -1,0 +1,25 @@
+$skeleton-background-color: $color-white !default;
+$skeleton-block-background-color: $color-gainsboro !default;
+$skeleton-border-color: $color-gainsboro !default;
+
+@mixin skeleton-element-block($height: 10px, $width: 10px, $border-radius: 2px, $background-color: $skeleton-block-background-color) {
+    height: $height;
+    width: $width;
+    border-radius: $border-radius;
+    background-color: $background-color;
+}
+
+@keyframes skeleton-pulse-animation-transition {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+%skeleton-pulse-animation {
+    animation: skeleton-pulse-animation-transition cubic-bezier(0, 0.2, 0.8, 1) 1.2s infinite;
+}

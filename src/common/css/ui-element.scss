@@ -1,0 +1,49 @@
+$form-element-button-primary-background-color: $color-turquoise;
+$form-element-button-primary-border-color: $color-turquoise;
+$form-element-button-primary-font-color: $color-white;
+
+$form-element-style-map: (
+    font-color: $color-nero,
+    border-color: $color-very-light-grey,
+    background-color: $color-white
+) !default;
+
+@mixin form-element-style($style-map) {
+    background-color: map-get($style-map, background-color);
+    border: 1px solid map-get($style-map, border-color);
+    color: map-get($style-map, font-color);
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 4px 10px;
+}
+
+.ui-field {
+    display: inline-flex;
+    align-items: center;
+    &__label {
+        margin-right: 8px;
+    }
+}
+
+.ui-input,
+.ui-select {
+    height: 28px;
+    @include form-element-style($form-element-style-map);
+}
+
+.ui-button {
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    @include form-element-style($form-element-style-map);
+
+    &--primary {
+        background-color: $form-element-button-primary-background-color;
+        color: $form-element-button-primary-font-color;
+        border-color: $form-element-button-primary-border-color;
+    }
+}

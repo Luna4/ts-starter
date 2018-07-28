@@ -1,0 +1,20 @@
+$user-list-grid-thead-background-color: $color-very-light-grey;
+$user-list-grid-border-color: $color-very-light-grey;
+$user-list-grid-thead-font-color: $color-nero;
+
+.p-user-list__grid {
+    width: 100%;
+    border-spacing: 0px;
+    thead {
+        color: $user-list-grid-thead-font-color;
+        background-color: $user-list-grid-thead-background-color;
+    }
+    th, td {
+        padding: 8px 24px;
+        text-align: left;
+        font-size: 13px;
+    }
+    tr:not(:last-child) {
+        border-bottom: 1px solid $user-list-grid-border-color;
+    }
+}

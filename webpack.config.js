@@ -2,11 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const jsOutputDirectory = 'js';
 const output = {
   path: path.join(__dirname, '/dist/'),
-  filename: `${jsOutputDirectory}/[name].js`,
-  chunkFilename: `${jsOutputDirectory}/[name].js`,
+  filename: `js/[name].js`,
+  chunkFilename: `js/[name].js`,
   publicPath: '/'
 }
 
@@ -71,6 +70,7 @@ module.exports = {
   },
 
   devServer: {
+    historyApiFallback: true,
     overlay: true,
     port: 8082,
     stats: {

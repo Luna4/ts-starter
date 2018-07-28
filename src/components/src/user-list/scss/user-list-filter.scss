@@ -1,0 +1,7 @@
+.p-user-list__filter {
+    display: flex;
+    padding: 12px 0;
+    .ui-field:not(:last-child) {
+        margin-right: 12px;
+    }
+}

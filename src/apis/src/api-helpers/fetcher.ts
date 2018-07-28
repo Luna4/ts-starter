@@ -9,7 +9,7 @@ const defaultFetchOptions: Partial<FetchOptions> = {
     method: 'GET'
 };
 
-export const fecher = async <T>(url: string, options: FetchOptions = defaultFetchOptions): Promise<T> => {
+export const fetcher = async <T>(url: string, options: FetchOptions = defaultFetchOptions): Promise<T> => {
     const response = await fetch(url, {
         method: options.method,
         body: options.body ? JSON.stringify(options.body) : options.body
@@ -26,5 +26,9 @@ export const fecher = async <T>(url: string, options: FetchOptions = defaultFetc
 };
 
 export const serializeObjectToParamString = (obj: any): string => {
-    return Object.keys(obj).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`).join('&');
+    return Object.keys(obj).map(k => {
+        if (obj[k]) {
+            return `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`;
+        }
+    }).join('&');
 };

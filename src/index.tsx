@@ -1,8 +1,22 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { Hello } from './components/Hello';
+import { render } from 'react-dom';
+import { Router, Route, Switch } from 'react-router';
+import { createBrowserHistory } from 'history';
+import { App } from './app';
+import { UserListContainer } from './containers/user-list-container';
+import { NotFound } from './components/src/not-found/not-found';
 
-ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById('root')
+const history = createBrowserHistory();
+
+export const Root = () => (
+  <App>
+    <Router history={history}>
+      <Switch>
+        <Route path="/" exact={true} component={UserListContainer} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
+  </App>
 );
+
+render(<Root />, document.getElementById('root'));
