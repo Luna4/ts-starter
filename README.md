@@ -14,6 +14,12 @@ yarn install
 npm start
 ```
 
+### Build
+
+```code
+npm run build // `dist` is the output dir
+```
+
 ### Run unit tests
 
 ```code
@@ -102,6 +108,8 @@ npm run apis:test:coverage // unit tests coverage check
 ```
 
 ### TODO
+- split webapck dev and prod
+- define environment variable in webpack
 - HOC loading indicator
+- Error Boundary
 - unit tests for components (enzym)
-- seperate webapck dev and prod
