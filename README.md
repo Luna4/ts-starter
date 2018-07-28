@@ -14,6 +14,21 @@ yarn install
 npm start
 ```
 
+### Run unit tests
+
+```code
+// run stores unit tests
+npm run stores:test
+npm run stores:test:watch // watch mode
+npm run stores:test:coverage // unit tests coverage check
+
+// run api unit tests
+npm run apis:test
+npm run apis:test:watch // watch mode
+npm run apis:test:coverage // unit tests coverage check
+```
+
+
 ### Directory
 
 ```
