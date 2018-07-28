@@ -17,22 +17,30 @@ npm start
 ### Directory
 
 ```
+.
 ├── README.md
 ├── index.html
 ├── package.json
 ├── postcss.config.js
 ├── src
-│   ├── apis
-│   │   └── src
-│   │       ├── api-helpers
-│   │       │   ├── fetcher.ts
-│   │       │   └── util.ts
-│   │       ├── mutations
-│   │       └── queries
-│   │           ├── types
-│   │           │   └── get-users-response.ts
-│   │           └── user-api.ts
+│   ├── index.tsx
 │   ├── app.tsx
+│   ├── apis
+│   │   ├── jest.config.json
+│   │   ├── src
+│   │   │   ├── api-helpers
+│   │   │   │   ├── fetcher.ts
+│   │   │   │   └── util.ts
+│   │   │   ├── mutations
+│   │   │   └── queries
+│   │   │       ├── test
+│   │   │       │   └── user-api.test.ts
+│   │   │       ├── types
+│   │   │       │   └── get-users-response.ts
+│   │   │       └── user-api.ts
+│   │   └── test-utils
+│   │       └── fetch-polyfill.js
+
 │   ├── common
 │   │   └── css
 │   │       ├── colors.scss
@@ -43,6 +51,10 @@ npm start
 │   │       └── ui-element.scss
 │   ├── components
 │   │   └── src
+│   │       ├── header
+│   │       │   ├── header.tsx
+│   │       │   └── scss
+│   │       │       └── header.scss
 │   │       ├── not-found
 │   │       │   └── not-found.tsx
 │   │       └── user-list
@@ -57,10 +69,12 @@ npm start
 │   │           └── user-list.tsx
 │   ├── containers
 │   │   └── user-list-container.tsx
-│   ├── index.tsx
 │   ├── stores
+│   │   ├── jest.config.json
 │   │   └── src
 │   │       ├── base-store.ts
+│   │       ├── test
+│   │       │   └── user-store.test.ts
 │   │       └── user-store.ts
 │   └── types
 │       ├── user-store-sate.ts
@@ -74,5 +88,5 @@ npm start
 
 ### TODO
 - HOC loading indicator
-- unit test (jest | enzym)
+- unit tests for components (enzym)
 - seperate webapck dev and prod

@@ -5,8 +5,10 @@ node_modules/
 .vscode
 .idea
 
-#Build byproducts
+# Build
 dist/
+
+# Unit tests coverage
 src/apis/coverage
 src/components/coverage
 src/stores/coverage
