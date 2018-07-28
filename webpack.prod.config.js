@@ -11,6 +11,7 @@ module.exports = {
     path: path.join(__dirname, '/dist/')
 	},
   entry: './src/index.tsx',
+  devtool: 'source-map',
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
