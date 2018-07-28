@@ -1,2 +1,12 @@
+# Dependency directories
 node_modules/
+
+# Editors
+.vscode
+.idea
+
+#Build byproducts
 dist/
+src/apis/coverage
+src/components/coverage
+src/stores/coverage
