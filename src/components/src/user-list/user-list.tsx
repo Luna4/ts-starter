@@ -13,10 +13,10 @@ export interface UserListProps {
 export class UserList extends React.Component<UserListProps> {
     render() {
         return (
-            <React.Fragment>
+            <section className="p-main">
                 <UserListFilter fetchUsers={this.props.userStore.fetchUsers}/>
                 <UserListGrid  {...this.props} />
-            </React.Fragment>
+            </section>
         );
     }
 

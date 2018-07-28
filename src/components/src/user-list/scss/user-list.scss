@@ -1,3 +1,9 @@
 @import 'common/css/index.scss';
 @import 'user-list-filter';
 @import 'user-list-grid';
+
+.p-main {
+    margin: 0 auto;
+    max-width: 1024px;
+    padding: 0 10px;
+}

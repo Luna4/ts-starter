@@ -1,0 +1,12 @@
+$header-font-color: #fff;
+$header-background-color: #333;
+
+.p-header {
+    height: 44px;
+    color: $header-font-color;
+    background-color: $header-background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}

@@ -5,11 +5,13 @@ import { createBrowserHistory } from 'history';
 import { App } from './app';
 import { UserListContainer } from './containers/user-list-container';
 import { NotFound } from './components/src/not-found/not-found';
+import { Header } from './components/src/header/header';
 
 const history = createBrowserHistory();
 
 export const Root = () => (
   <App>
+    <Header />
     <Router history={history}>
       <Switch>
         <Route path="/" exact={true} component={UserListContainer} />
