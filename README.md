@@ -22,12 +22,6 @@ npm run lint:ts // tslint check
 npm run lint // style & ts lint check
 ```
 
-### Build
-
-```code
-npm run build // `dist` is the output dir
-```
-
 ### Run unit tests
 
 ```code
@@ -42,6 +36,11 @@ npm run apis:test:watch // watch mode
 npm run apis:test:coverage // unit tests coverage check
 ```
 
+### Build
+
+```code
+npm run build // `dist` is the output dir
+```
 
 ### Directory
 
