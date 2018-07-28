@@ -27,11 +27,14 @@ $form-element-style-map: (
 
 .ui-input,
 .ui-select {
-    height: 28px;
     @include form-element-style($form-element-style-map);
+
+    height: 28px;
 }
 
 .ui-button {
+    @include form-element-style($form-element-style-map);
+
     text-align: center;
     vertical-align: middle;
     user-select: none;
@@ -39,7 +42,6 @@ $form-element-style-map: (
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
-    @include form-element-style($form-element-style-map);
 
     &--primary {
         background-color: $form-element-button-primary-background-color;

@@ -42,9 +42,9 @@ export class UserListFilter extends React.Component<UserListFilterProps, UserLis
         this.setState({ [event.target.name]: event.target.value});
     }
 
-    handleSubmit = (event: any) => {
+    handleSubmit = async (event: any) => {
         event.preventDefault();
         const { age, gender } = this.state;
-        this.props.fetchUsers(age, gender);
+        await this.props.fetchUsers(age, gender);
     }
 }

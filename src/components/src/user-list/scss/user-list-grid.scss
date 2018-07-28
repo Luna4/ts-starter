@@ -4,12 +4,13 @@ $user-list-grid-thead-font-color: $color-nero;
 
 .p-user-list__grid {
     width: 100%;
-    border-spacing: 0px;
+    border-spacing: 0;
     thead {
         color: $user-list-grid-thead-font-color;
         background-color: $user-list-grid-thead-background-color;
     }
-    th, td {
+    th,
+    td {
         padding: 8px 24px;
         text-align: left;
         font-size: 13px;

@@ -14,6 +14,12 @@ yarn install
 npm start
 ```
 
+### Style lint check
+
+```code
+npm run lint:style
+```
+
 ### Build
 
 ```code

@@ -23,7 +23,7 @@
       "check-type-operator",
       "check-preblock"
     ],
-    "no-unused-variable": true,
+    "no-unused-variable": false,
     "jsx-no-multiline-js": false,
     "linterOptions": {
       "exclude": [
