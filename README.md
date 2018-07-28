@@ -14,7 +14,7 @@ yarn install
 npm start
 ```
 
-###lint check
+### Lint check
 
 ```code
 npm run lint:style // stylelint check
