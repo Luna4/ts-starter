@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -12,7 +11,6 @@ module.exports = {
     path: path.join(__dirname, '/dist/')
 	},
   entry: './src/index.tsx',
-  devtool: 'source-map',
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
@@ -28,11 +26,6 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      inject: 'body',
-      filename: 'index.html'
-    }),
     new webpack.NamedModulesPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
@@ -50,21 +43,6 @@ module.exports = {
           chunks: 'all',
           minChunks: 2
         }
-      }
-    }
-  },
-
-  devServer: {
-    historyApiFallback: true,
-    overlay: true,
-    port: 8082,
-    stats: {
-      color: true
-    },
-    proxy: {
-      '/api/*': {
-        target: 'http://localhost:5000/',
-        changeOrigin: true
       }
     }
   }

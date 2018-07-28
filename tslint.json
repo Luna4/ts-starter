@@ -24,6 +24,11 @@
       "check-preblock"
     ],
     "no-unused-variable": true,
-    "jsx-no-multiline-js": false
+    "jsx-no-multiline-js": false,
+    "linterOptions": {
+      "exclude": [
+        "dist/*.*"
+      ]
+    }
   }
 }
