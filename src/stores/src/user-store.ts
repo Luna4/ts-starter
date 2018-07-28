@@ -13,7 +13,7 @@ export class UserStore extends BaseStore<UserState> {
     }
 
     /**
-     * Fetch user list data through user api
+     * Fetch user list data through user api and update store state
      */
     public fetchUsers = async (age: string = '', gender: string = ''): Promise<void> => {
         let users: User[];
@@ -26,3 +26,9 @@ export class UserStore extends BaseStore<UserState> {
         this.setData({ users });
     }
 }
+
+// create store instance with default values
+const store = new UserStore();
+// export instance as default
+// tslint:disable-next-line:no-default-export
+export default store;
