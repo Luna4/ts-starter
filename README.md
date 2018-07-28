@@ -14,10 +14,12 @@ yarn install
 npm start
 ```
 
-### Style lint check
+###lint check
 
 ```code
-npm run lint:style
+npm run lint:style // stylelint check
+npm run lint:ts // tslint check
+npm run lint // style & ts lint check
 ```
 
 ### Build
