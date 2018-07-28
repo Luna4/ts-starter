@@ -1,15 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  mode: 'production',
 	output: {
-    path: path.join(__dirname, '/dist/'),
-    filename: `js/[name].js`,
-    chunkFilename: `js/[name].js`,
-    publicPath: '/'
-  },
-  mode: 'development',
+    publicPath: '/',
+    filename: '[name].[hash].js',
+    sourceMapFilename: '[name].[hash].map.js',
+    path: path.join(__dirname, '/dist/')
+	},
   entry: './src/index.tsx',
   devtool: 'source-map',
 
@@ -22,7 +23,7 @@ module.exports = {
     rules: [
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
-      { test: /\.(sa|sc|c)ss$/, use: [ 'style-loader', 'css-loader', 'postcss-loader', 'sass-loader' ] },
+      { test: /\.(sa|sc|c)ss$/, use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader' ] }
     ]
   },
 
@@ -32,25 +33,22 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css'
+    })
   ],
 
   optimization: {
-    runtimeChunk: true,
     splitChunks: {
-      chunks: 'async',
-      minSize: 30000,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      name: true,
       cacheGroups: {
         default: false,
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
-          chunks: 'all'
+          chunks: 'all',
+          minChunks: 2
         }
       }
     }
