@@ -12,7 +12,7 @@ export interface UserListFilterProps{
 
 export class UserListFilter extends React.Component<UserListFilterProps, UserListFilterStates> {
 
-    constructor(props) {
+    constructor(props: UserListFilterProps) {
         super(props);
         this.state = { age: '', gender: '' };
     }
@@ -39,7 +39,7 @@ export class UserListFilter extends React.Component<UserListFilterProps, UserLis
         );
     }
 
-    handleChange = (event) => {
+    handleChange = (event: any) => {
         this.setState({ [event.target.name]: event.target.value});
     }
 

@@ -1,46 +1,34 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const merge = require('webpack-merge');
+const common = require('./webpack.common.js');
 
-module.exports = {
+module.exports = merge(common, {
   mode: 'production',
-	output: {
-    publicPath: '/',
-    filename: '[name].[hash].js',
-    sourceMapFilename: '[name].[hash].map.js',
-    path: path.join(__dirname, '/dist/')
-	},
-  entry: './src/index.tsx',
   devtool: 'source-map',
-
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
-    modules: ['src', 'node_modules']
+  output: {
+    publicPath: '/',
+    filename: 'js/[name].[hash].js',
+    sourceMapFilename: 'js/[name].[hash].map.js',
+    path: path.join(__dirname, '/dist/')
   },
-
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[hash].css',
+      chunkFilename: 'css/[id].[hash].css'
+    }),
+    new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') } })
+  ],
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
-      { test: /\.(sa|sc|c)ss$/, use: [ MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader' ] }
+      { test: /\.(sa|sc|c)ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] }
     ]
   },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      inject: 'body',
-      filename: 'index.html'
-    }),
-    new webpack.NamedModulesPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
-      chunkFilename: '[id].[hash].css'
-    })
-  ],
-
   optimization: {
+    runtimeChunk: false,
     splitChunks: {
       cacheGroups: {
         default: false,
@@ -53,4 +41,4 @@ module.exports = {
       }
     }
   }
-};
+});

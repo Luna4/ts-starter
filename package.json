@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config=webpack.config.js",
-    "build": "npm run clean & webpack --config=webpack.prod.config.js --dest dist",
+    "start": "webpack-dev-server --open --config=webpack.dev.config.js",
+    "build": "webpack -p --config=webpack.prod.config.js --dest dist",
     "clean": "rimraf dist",
     "lint": "npm run lint:style & npm run lint:ts",
     "lint:ts": "tslint --project tsconfig.json \"src/**/*.ts?(x)\"",
@@ -32,6 +32,7 @@
     "@types/react-dom": "^16.0.6",
     "@types/react-router": "^4.0.29",
     "awesome-typescript-loader": "^5.2.0",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "enzyme": "^3.3.0",
     "html-webpack-plugin": "^3.2.0",
@@ -60,6 +61,7 @@
     "typescript": "^2.9.2",
     "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.3"
   }
 }
