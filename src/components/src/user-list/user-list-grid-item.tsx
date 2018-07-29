@@ -9,7 +9,7 @@ export interface UserListGridItemProps  {
 @observer
 export class UserListGridItem extends React.Component<UserListGridItemProps> {
     render() {
-        const { user} =  this.props;
+        const { user } =  this.props;
         return (
             <tr>
                 <td>{user.name}</td>

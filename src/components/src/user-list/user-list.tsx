@@ -20,7 +20,7 @@ export class UserList extends React.Component<UserListProps> {
         );
     }
 
-    async componentDidMount() {
+    async componentDidMount (): Promise<void> {
         await this.props.userStore.fetchUsers();
     }
 }

@@ -1,6 +1,7 @@
 {
     "skipLibCheck": true,
     "compilerOptions": {
+        "strict": true,
         "typeRoots": [
             "node_modules/@types"
         ],

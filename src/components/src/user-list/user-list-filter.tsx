@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { promises } from 'fs';
 
 export interface UserListFilterStates {
     age?: string;
@@ -6,7 +7,7 @@ export interface UserListFilterStates {
 }
 
 export interface UserListFilterProps{
-    fetchUsers: (age: string, gender: string) => void;
+    fetchUsers: (age: string, gender: string) => Promise<void>;
 }
 
 export class UserListFilter extends React.Component<UserListFilterProps, UserListFilterStates> {
@@ -42,7 +43,7 @@ export class UserListFilter extends React.Component<UserListFilterProps, UserLis
         this.setState({ [event.target.name]: event.target.value});
     }
 
-    handleSubmit = async (event: any) => {
+    handleSubmit = async (event: any): Promise<void> => {
         event.preventDefault();
         const { age, gender } = this.state;
         await this.props.fetchUsers(age, gender);

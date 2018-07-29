@@ -8,15 +8,15 @@ describe('user store', () => {
         userStore = new UserStore();
     });
 
-    it('can get users', () => {
+    it('can get users', async () => {
         const getUsers = jest.spyOn(userApi, 'getUsers');
-        userStore.fetchUsers('18', 'female');
+        await userStore.fetchUsers('18', 'female');
         expect(getUsers).toBeCalledWith('18', 'female');
     });
 
-    it('can get users by default parameters', () => {
+    it('can get users by default parameters', async () => {
         const getUsers = jest.spyOn(userApi, 'getUsers');
-        userStore.fetchUsers();
+        await userStore.fetchUsers();
         expect(getUsers).toBeCalledWith('', '');
     });
 
