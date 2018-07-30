@@ -34,12 +34,21 @@ npm run stores:test:coverage // unit tests coverage check
 npm run apis:test
 npm run apis:test:watch // watch mode
 npm run apis:test:coverage // unit tests coverage check
+
+// run all unit tests
+npm run test
 ```
 
 ### Build
 
 ```code
 npm run build // `dist` is the output dir
+```
+
+### Bundle output test
+
+```code
+npm run dist // http-server would start a local server and open dist/index.html
 ```
 
 ### Directory
@@ -115,8 +124,6 @@ npm run build // `dist` is the output dir
 ```
 
 ### TODO
-- split webapck dev and prod
-- define environment variable in webpack
 - HOC loading indicator
 - Error Boundary
 - unit tests for components (enzym)
