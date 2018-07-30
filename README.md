@@ -131,4 +131,3 @@ npm run dist // http-server would start a local server and open dist/index.html
 ### TODO
 - HOC loading indicator
 - Error Boundary
-- unit tests for components (enzym)
