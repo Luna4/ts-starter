@@ -61,12 +61,18 @@ npm run dist // http-server would start a local server and open dist/index.html
 ```
 .
 ├── README.md
+├── dist
+│   ├── 404.html
+│   ├── css
+│   │   └── bundle.e91ad2dfc4e730731c0c.css
+│   ├── index.html
+│   └── js
+│       ├── bundle.e91ad2dfc4e730731c0c.js
+│       └── bundle.e91ad2dfc4e730731c0c.map.js
 ├── index.html
 ├── package.json
 ├── postcss.config.js
 ├── src
-│   ├── index.tsx
-│   ├── app.tsx
 │   ├── apis
 │   │   ├── jest.config.json
 │   │   ├── src
@@ -82,35 +88,44 @@ npm run dist // http-server would start a local server and open dist/index.html
 │   │   │       └── user-api.ts
 │   │   └── test-utils
 │   │       └── fetch-polyfill.js
-
+│   ├── app.tsx
 │   ├── common
-│   │   └── css
+│   │   └── scss
+│   │       ├── all.scss
 │   │       ├── colors.scss
-│   │       ├── index.scss
 │   │       ├── reset.scss
 │   │       ├── skeleton.scss
 │   │       ├── typography.scss
 │   │       └── ui-element.scss
 │   ├── components
-│   │   └── src
-│   │       ├── header
-│   │       │   ├── header.tsx
-│   │       │   └── scss
-│   │       │       └── header.scss
-│   │       ├── not-found
-│   │       │   └── not-found.tsx
-│   │       └── user-list
-│   │           ├── scss
-│   │           │   ├── user-list-filter.scss
-│   │           │   ├── user-list-grid.scss
-│   │           │   └── user-list.scss
-│   │           ├── user-list-filter.tsx
-│   │           ├── user-list-grid-header.tsx
-│   │           ├── user-list-grid-item.tsx
-│   │           ├── user-list-grid.tsx
-│   │           └── user-list.tsx
+│   │   ├── jest.config.json
+│   │   ├── src
+│   │   │   ├── header
+│   │   │   │   ├── header.tsx
+│   │   │   │   ├── scss
+│   │   │   │   │   └── header.scss
+│   │   │   │   └── test
+│   │   │   │       └── header.test.tsx
+│   │   │   ├── not-found
+│   │   │   │   └── not-found.tsx
+│   │   │   └── user-list
+│   │   │       ├── scss
+│   │   │       │   ├── user-list-filter.scss
+│   │   │       │   ├── user-list-grid.scss
+│   │   │       │   └── user-list.scss
+│   │   │       ├── test
+│   │   │       │   └── user-list-filter.test.tsx
+│   │   │       ├── user-list-filter.tsx
+│   │   │       ├── user-list-grid-header.tsx
+│   │   │       ├── user-list-grid-item.tsx
+│   │   │       ├── user-list-grid.tsx
+│   │   │       └── user-list.tsx
+│   │   └── test-utils
+│   │       ├── setupTests.js
+│   │       └── styleMock.js
 │   ├── containers
 │   │   └── user-list-container.tsx
+│   ├── index.tsx
 │   ├── stores
 │   │   ├── jest.config.json
 │   │   └── src
@@ -121,9 +136,12 @@ npm run dist // http-server would start a local server and open dist/index.html
 │   └── types
 │       ├── user-store-sate.ts
 │       └── user.ts
+├── stylelint.config.js
 ├── tsconfig.json
 ├── tslint.json
-├── webpack.config.js
+├── webpack.common.js
+├── webpack.dev.config.js
+├── webpack.prod.config.js
 ├── yarn-error.log
 └── yarn.lock
 ```
@@ -131,4 +149,3 @@ npm run dist // http-server would start a local server and open dist/index.html
 ### TODO
 - HOC loading indicator
 - Error Boundary
-- unit tests for components (enzym)
