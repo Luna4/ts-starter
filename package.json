@@ -11,13 +11,16 @@
     "lint:ts": "tslint --project tsconfig.json \"src/**/*.ts?(x)\"",
     "lint:style": "stylelint \"src/**/*.scss\" --config stylelint.config.js",
     "lint": "npm run lint:style & npm run lint:ts",
+    "c:test": "jest --config src/components/jest.config.json",
+    "c:test:watch": "npm run c:test -- --watchAll",
+    "c:test:coverage": "npm run c:test & cd . & http-server ./src/components/coverage/ -o -c=-1",
     "apis:test": "jest --config src/apis/jest.config.json",
     "apis:test:watch": "npm run apis:test -- --watchAll",
     "apis:test:coverage": "npm run apis:test & cd . & http-server ./src/apis/coverage/ -o -c=-1",
     "stores:test": "jest --config src/stores/jest.config.json",
     "stores:test:watch": "npm run stores:test -- --watchAll",
     "stores:test:coverage": "npm run stores:test & cd . & http-server ./src/stores/coverage/ -o -c=-1",
-    "test": "npm run apis:test & npm run stores:test"
+    "test": "npm run apis:test & npm run stores:test & npm run c:test"
   },
   "dependencies": {
     "mobx": "^5.0.3",
@@ -37,6 +40,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "jest": "^23.4.2",
@@ -44,6 +48,7 @@
     "jest-serializer-html-string": "^1.0.1",
     "mini-css-extract-plugin": "^0.4.1",
     "mobx-react-devtools": "^6.0.2",
+    "mock-local-storage": "^1.0.5",
     "node-sass": "^4.9.2",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^2.1.6",

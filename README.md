@@ -35,6 +35,11 @@ npm run apis:test
 npm run apis:test:watch // watch mode
 npm run apis:test:coverage // unit tests coverage check
 
+// run component unit tests
+npm run c:test
+npm run c:test:watch // watch mode
+npm run c:test:coverage // unit tests coverage check
+
 // run all unit tests
 npm run test
 ```
