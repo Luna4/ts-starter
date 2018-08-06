@@ -23,6 +23,7 @@
     "test": "npm run apis:test & npm run stores:test & npm run c:test"
   },
   "dependencies": {
+    "date-fns": "^1.29.0",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",
     "react": "^16.4.1",
