@@ -10,8 +10,8 @@ export enum CharacterType {
  * Match expression after second colon.
  * Eg:
  * ```
- * // ['date:d:ddd DD MMM', 'ddd DD MMM']
  * matchExpression('date:d:YYYY-MM-DD');
+ * // ['date:d:ddd DD MMM', 'ddd DD MMM']
  * ```
  */
 function matchExpression(path: string): string | null {
@@ -24,8 +24,8 @@ function matchExpression(path: string): string | null {
  * Match character type between colon.
  * Eg:
  * ```
- * // [':d:', 'd']
  * identifyType('date:d:YYYY-MM-DD');
+ * // [':d:', 'd']
  * ```
  */
 function identifyType(path: string): string {
