@@ -147,5 +147,5 @@ npm run dist // http-server would start a local server and open dist/index.html
 ```
 
 ### TODO
-- HOC loading indicator
+- HOC loading indicator 
 - Error Boundary
