@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open --config=webpack.dev.config.js",
+    "lang": "rimraf src/date-locales && mkdir src/date-locales && node lang.js",
     "build": "webpack -p --config=webpack.prod.config.js --dest dist",
     "clean": "rimraf dist",
     "dist": "npm run clean & npm run build & http-server ./dist -o -c=-1",
