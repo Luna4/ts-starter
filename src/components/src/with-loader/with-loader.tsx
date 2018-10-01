@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Component } from 'react';
 
 /**
  * HOC for loading indicator
@@ -15,7 +14,7 @@ import { Component } from 'react';
 
 export const WrapComponentWithLoader = <P extends object, S extends object>(LoadingIndicator: React.SFC, hasData: boolean) =>
     (ActualComponent: React.ComponentType<P>) =>
-        class Loader extends Component<P, S> {
+        class Loader extends React.Component<P, S> {
             render() {
                 return hasData
                     ? <ActualComponent {...this.props} />
