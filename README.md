@@ -11,7 +11,7 @@ React, Mobx, Typescript, Scss, React Router
 
 ```code
 yarn install
-npm start
+yarn start
 ```
 
 ### Lint check
